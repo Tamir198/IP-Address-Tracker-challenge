@@ -1,0 +1,25 @@
+
+/* 
+- Mobile: 375px
+- Desktop: 1440px */
+
+:root{
+  --mainHeadline : white,
+  --text : hsl(0, 0%, 17%),
+  --titles : hsl(0, 0%, 59%),
+  --text-input-size: 18px,
+  --very-dark-gray: hsl(0, 0%, 17%)
+  --dark-gray: hsl(0, 0%, 59%)
+  /* 400, 500, 700 */
+}
+.mainContainer{
+  height: 400px;
+  background-image: url("/images/pattern-bg.png");
+
+}
+
+#mapid { 
+  height: 450px;
+  left: 20% 0;
+  margin: auto;
+ }

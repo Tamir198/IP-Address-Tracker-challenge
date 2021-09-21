@@ -1,4 +1,4 @@
-const API_KEY = "API-KEy-Here";
+const API_KEY = "key";
 
 export default class IpGeolocation{
   async getAddress(){
