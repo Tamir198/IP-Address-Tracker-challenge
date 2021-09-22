@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IP Address Tracker</title>
 </head>
@@ -15,50 +18,60 @@
   <div class="main-container">
     <h2 class="page-title">IP Address Tracker</h2>
     <div class="ip-input-div">
-      <input class="ip-input"></input>
+      <input placeholder="Enter IP address and search for locations" class="ip-input"></input>
       <button class="submit-ip-btn">></button>
     </div>
 
-  <div class="data-on-address">
-    <div>
-      <div class="secondary-title">IP ADDRESS</div>
-      <br>
-      <div id="ip" class="bold-title">Loading...</div>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="data-on-address">
+      <div>
+        <br>
+        <div class="secondary-title">IP ADDRESS:</div>
+        <br>
+        <div id="ip" class="bold-title">Loading...</div>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div>
+        <br>
+        <div class="secondary-title">LOCATION:</div>
+        <br>
+        <div id="location" class="bold-title"></div>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div>
+        <br>
+        <div class="secondary-title">TIMEZONE:</div>
+        <br>
+        <div id="timezone" class="bold-title"></div>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div>
+        <br>
+        <div class="secondary-title">ISP:</div>
+        <br>
+        <div id="coordinates" class="bold-title"></div>
+        <br>
+      </div>
+
     </div>
-
-    <div class="vertical-line"></div>
-
-    <div>
-      <div  class="secondary-title">LOCATION</div>
-      <br>
-      <div id="location" class="bold-title"></div>
-    </div>
-
-    <div class="vertical-line"></div>
-
-    <div>
-      <div class="secondary-title">TIMEZONE</div>
-      <br>
-      <div id="timezone" class="bold-title"></div>
-    </div>
-
-    <div class="vertical-line"></div>
-
-    <div>
-      <div class="secondary-title">ISP</div>
-      <br>
-      <div id="coordinates" class="bold-title"></div>
-    </div>
-
   </div>
-</div>
 
   <div id="mapid" class="map"></div>
-  
-  <script  type="module"  src="index.js"></script>
+
+  <script type="module" src="index.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 </body>
 
 </html>

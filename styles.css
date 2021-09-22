@@ -1,7 +1,5 @@
 
-/* 
-- Mobile: 375px
-- Desktop: 1440px */
+@import url("https://fonts.google.com/specimen/Rubik");
 
 :root{
   --mainHeadline : white;
@@ -16,14 +14,21 @@
   --weight500 : 500;
   --weight700 : 700;
 
-  /* 400, 500, 700 */
 }
 
 body{
-  margin: 0px
+  margin: 0px;
+  font-family: 'Rubik', sans-serif;
 }
 
-
+.main-container{
+  background-image: url("/images/pattern-bg.png");
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-repeat:no-repeat;
+} 
 
 .page-title{
 font-size: var(--pixles32);
@@ -36,15 +41,14 @@ font-weight: var(--weight400);
   font-weight: var(--weight700);
   font-size: var(--pixles24);
 }
-.main-container{
-  background-image: url("/images/pattern-bg.png");
-  text-align: -webkit-center;
 
-}
+
 
 .data-on-address{
   background-color: white;
   width: 60%;
+  z-index: 1;
+  margin-bottom: -55px;
   padding: 50px;
   border-radius: 8px;
   display: flex;
@@ -55,14 +59,21 @@ font-weight: var(--weight400);
 .submit-ip-btn{
   background: black;
   color: white;
-  height: 30px;
+  height: 40px;
   border-radius: 0 8px 8px 0;
 }
 
 .ip-input-div{
-  height: 30px;
+  height: 40px;
   width: 40%;
+  display: flex;
+  justify-content: center;
   border-radius: 8px 0 0 8px ;
+}
+
+.ip-input{
+  width: 450px;
+  border-radius: 8px 0 0 8px;
 }
 
 .vertical-line{
@@ -77,8 +88,9 @@ font-weight: var(--weight400);
 }
 
 #mapid { 
-  height: 400px;
+  height: 600px;
   left: 20% 0;
+  z-index: 0;
   margin: auto;
  }
 
@@ -94,7 +106,20 @@ font-weight: var(--weight400);
 
   .ip-input-div{
     display: flex;
+    width: 80%;
     justify-content: center;
+  }
+
+  .data-on-address{
+    margin-bottom: -30px;
+    height: 250px;
+    align-items: center;
+    text-align: center;
+    height: -webkit-fill-available;
+  }
+
+  .main-container{
+    height: 350px;
   }
 
 
