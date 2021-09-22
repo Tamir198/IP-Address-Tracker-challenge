@@ -4,22 +4,98 @@
 - Desktop: 1440px */
 
 :root{
-  --mainHeadline : white,
-  --text : hsl(0, 0%, 17%),
-  --titles : hsl(0, 0%, 59%),
-  --text-input-size: 18px,
-  --very-dark-gray: hsl(0, 0%, 17%)
-  --dark-gray: hsl(0, 0%, 59%)
+  --mainHeadline : white;
+  --text : hsl(0, 0%, 17%);
+  --titles : hsl(0, 0%, 59%);
+  --text-input-size: 18px;
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --pixles24: 24px;
+  --pixles32: 32px;
+  --weight400 : 400;
+  --weight500 : 500;
+  --weight700 : 700;
+
   /* 400, 500, 700 */
 }
-.mainContainer{
-  height: 400px;
-  background-image: url("/images/pattern-bg.png");
 
+body{
+  margin: 0px
+}
+
+
+
+.page-title{
+font-size: var(--pixles32);
+color: var(--mainHeadline);
+font-weight: var(--weight400);
+
+}
+
+.bold-title{
+  font-weight: var(--weight700);
+  font-size: var(--pixles24);
+}
+.main-container{
+  background-image: url("/images/pattern-bg.png");
+  text-align: -webkit-center;
+
+}
+
+.data-on-address{
+  background-color: white;
+  width: 60%;
+  padding: 50px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.submit-ip-btn{
+  background: black;
+  color: white;
+  height: 30px;
+  border-radius: 0 8px 8px 0;
+}
+
+.ip-input-div{
+  height: 30px;
+  width: 40%;
+  border-radius: 8px 0 0 8px ;
+}
+
+.vertical-line{
+  border-left: 1px solid black;
+  height: 75px;
+  width: 1px;
+}
+
+.secondary-title{
+  font-weight: var(--weight700);
+  color: var(--titles);
 }
 
 #mapid { 
-  height: 450px;
+  height: 400px;
   left: 20% 0;
   margin: auto;
  }
+
+ @media only screen and (max-width: 375px) {
+  .data-on-address{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .vertical-line{
+    border: white;
+  }
+
+  .ip-input-div{
+    display: flex;
+    justify-content: center;
+  }
+
+
+}

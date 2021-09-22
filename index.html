@@ -12,13 +12,47 @@
 </head>
 
 <body>
-  <div class="mainContainer">
-    <h2 class="page-title">Ip address tracker</h2>
-    <input class="ip-input"></input>
+  <div class="main-container">
+    <h2 class="page-title">IP Address Tracker</h2>
+    <div class="ip-input-div">
+      <input class="ip-input"></input>
+      <button class="submit-ip-btn">></button>
+    </div>
+
+  <div class="data-on-address">
+    <div>
+      <div class="secondary-title">IP ADDRESS</div>
+      <br>
+      <div id="ip" class="bold-title">Loading...</div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div>
+      <div  class="secondary-title">LOCATION</div>
+      <br>
+      <div id="location" class="bold-title"></div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div>
+      <div class="secondary-title">TIMEZONE</div>
+      <br>
+      <div id="timezone" class="bold-title"></div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div>
+      <div class="secondary-title">ISP</div>
+      <br>
+      <div id="coordinates" class="bold-title"></div>
+    </div>
 
   </div>
+</div>
 
-  <div class="data-on-address"></div>
   <div id="mapid" class="map"></div>
   
   <script  type="module"  src="index.js"></script>

@@ -1,24 +1,19 @@
-const API_KEY = "key";
 
-export default class IpGeolocation{
-  async getAddress(){
-    const ip = "8.8.8.8"
+const API_KEY = "KEY";
+
+export default class IpGeolocation {
+
+  location
+
+  async getAddress(ip) {
     const url = `https://geo.ipify.org/api/v1?apiKey=${API_KEY}&ipAddress=${ip}`
-    let myPromise = new Promise(function (myResolve, myReject) {
-      fetch(url)
-      .then(response => response.json())
-      .then(data => console.log(data));
-      console.log("Api call ended");
+
+   await fetch(url)
+      .then(res => res.json())
+      .then(data => this.setLocation(data))
+  }
   
-      myResolve(); 
-      myReject();  
-    });
-  
-    myPromise.then(
-      function myResolve(value) { console.log(value) },
-      function myReject(error) { console.log(error) }
-    );
-  
-  
+  setLocation(data){
+    this.location = data;
   }
 }
