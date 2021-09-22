@@ -2,17 +2,25 @@ import CurrentLocation from "./Location/CurrentLocation.js";
 import MapView from "./Map/map.js";
 import IpGeolocation from "./Networking/IpGeolocation.js";
 window.onload = () => {
-  let address =  new IpGeolocation().getAddress("8.8.8");
-
-  const currentLocation = new CurrentLocation();
-  currentLocation.getCurrentLocation().then(console.log("Done"));
-
-  document.querySelector("Input").addEventListener("input",updateValue);
+  const geoLocation = new IpGeolocation();
   const mapView = new MapView();
-  mapView.initMap();
-  // mapView.setMapLocation();
+  const currentLocation = new CurrentLocation();
 
-  function updateValue() {
-    // mapView.setMapLocation(coordinates[0], coordinates[1]);
-  }
+
+  mapView.initMap();
+
+  document.querySelector(".submit-ip-btn").addEventListener("click", () => {
+    const ip = document.querySelector(".ip-input").value;
+    const address = geoLocation.getAddress(ip).then((() => console.log("Do Something with adreess")));
+
+
+
+  });
+
+  //TODO check why Done is printed before getCurrentLocation is finished
+  currentLocation.getCurrentLocation().then(() =>
+    mapView.setMapLocation(
+      currentLocation.currentLatitude, currentLocation.currentLongitude)
+  );
+
 }

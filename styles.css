@@ -81,3 +81,21 @@ font-weight: var(--weight400);
   left: 20% 0;
   margin: auto;
  }
+
+ @media only screen and (max-width: 375px) {
+  .data-on-address{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .vertical-line{
+    border: white;
+  }
+
+  .ip-input-div{
+    display: flex;
+    justify-content: center;
+  }
+
+
+}
