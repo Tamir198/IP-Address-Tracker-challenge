@@ -1,11 +1,10 @@
-const mapBoxAccesToken = "TOKEN";
+const mapBoxAccesToken = "TOKEN"
 
 export default class MapView {
 
   constructor() {
     this.map = L.map('mapid').setView([51.505, -0.09], 13);
   }
-
 
   initMap() {
 
@@ -22,11 +21,18 @@ export default class MapView {
 
   setMapLocation(latitude, longitude) {
     this.map.setView([latitude, longitude], 13);
+    
+    const marker = L.marker([latitude, longitude]);
+    marker.bindPopup(`<b>Hey there<br/>I am your location popup and your coordinates are: <br/> (${latitude}, ${longitude})`).openPopup();
+
+    marker.addTo(this.map);
+    
     // TODO // check that the ip adress is valid
     // TODO //change the map zoom after user entered valid ip
   }
 
-
-
-
 }
+
+
+
+  
