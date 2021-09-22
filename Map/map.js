@@ -1,8 +1,9 @@
-const mapBoxAccesToken = "TOKEN"
+const MAP_BOX_ACCES_TOKEN = "ACCES_TOKEN";
 
 export default class MapView {
 
   constructor() {
+    //[51.505, -0.09] - random default values - has no meaning
     this.map = L.map('mapid').setView([51.505, -0.09], 13);
   }
 
@@ -14,25 +15,23 @@ export default class MapView {
       id: 'mapbox/streets-v11',
       tileSize: 512,
       zoomOffset: -1,
-      accessToken: mapBoxAccesToken
+      accessToken: MAP_BOX_ACCES_TOKEN
     }).addTo(this.map);
 
   }
 
   setMapLocation(latitude, longitude) {
     this.map.setView([latitude, longitude], 13);
-    
+
     const marker = L.marker([latitude, longitude]);
-    marker.bindPopup(`<b>Hey there<br/>I am your location popup and your coordinates are: <br/> (${latitude}, ${longitude})`).openPopup();
+    marker.bindPopup(`<b>Hey there<br/>I am your location popup and your coordinates are:
+     <br/> (${latitude}, ${longitude})`).openPopup();
+
+    marker.on('mouseover', (e) => {
+      e.target.openPopup();
+    });
 
     marker.addTo(this.map);
-    
-    // TODO // check that the ip adress is valid
-    // TODO //change the map zoom after user entered valid ip
   }
 
 }
-
-
-
-  

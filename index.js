@@ -8,8 +8,8 @@ window.onload = () => {
 
   mapView.initMap();
 
-  // updateLocationUI(geoLocation);
-  // setMapToCurrentLocation(mapView);
+  updateLocationUI(geoLocation);
+  setMapToCurrentLocation(mapView);
 
   document.querySelector(".submit-ip-btn").addEventListener("click", () => {
     updateLocationUI(geoLocation,mapView);
@@ -28,7 +28,7 @@ const updateLocationUI = (geoLocation,mapView)=>{
 
   geoLocation.getAddress(ip).then(() => {
     changeLocationUI(geoLocation.locationData);
-    mapView.setMapLocation(geoLocation.locationData.location.lat,geoLocation.locationData.location.lng)
+    mapView.setMapLocation(geoLocation.locationData.location.lat,geoLocation.locationData.location.lng);
   });
 }
 
